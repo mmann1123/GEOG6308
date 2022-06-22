@@ -1080,7 +1080,8 @@ body .markdown-body
 <p><code>jupyter notebook</code></p>
 <p>You should now be forwarded to a webpage showing the jupyter notebook interface. </p>
 <p>5) Open the homework assignment for the week. </p>
-<p>6) Change the name of the .ipynb file following the directions at the top of the file.</p>
+<p>6) Change the name of the .ipynb file following the directions at the top of the file. This can be done inside the assignment by clicking on the name in the upper left corner. Typically the name will follow this convension: (geo1_emailusername_assignment)</p>
+<p><img alt="rename" src="https://github.com/mmann1123/GEOG6308/blob/main/rename.png?raw=true" /></p>
 <p>7) Enter your name and any students you collaborated with in the top cell</p>
 <p><img alt="name" src="https://github.com/mmann1123/GEOG6308/blob/main/fill_name.png?raw=tru" /></p>
 <p>8) Fill your answers in the section starting with <code># YOUR CODE HERE</code></p>
@@ -1090,11 +1091,30 @@ raise NotImplementedError()
 </pre></div>
 
 <p>If you leave <code>raise NotImplementedError()</code> you might loose points. </p>
+<h1 id="whats-a-function">What&rsquo;s a Function?<a class="headerlink" href="#whats-a-function" title="Permanent link"></a></h1>
+<p>These assignments require the use of a <code>function</code>. Functions are just a way of assigning a name to a useful peice of code we want to use again and again. For instance <code>buffer</code> is a function we use all the time in arcmap.  </p>
+<p>In python we could sketch out the buffer function as follows:</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">buffer</span><span class="p">(</span><span class="n">a_line_or_polygon</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
+
+    <span class="n">buffered_object</span> <span class="o">=</span>  <span class="n">a_line_or_polygon</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">buffered_object</span>
+</pre></div>
+
+<p>In this case we defined a function that takes an input of a shapefile stored in <code>a_line_or_polygon</code>, then we increase the boundary by <code>distance</code> and store the new polygon in <code>buffered_object</code>.</p>
+<p>This just DEFINES the function so that we can use it later. It doesn&rsquo;t EXECUTE it.</p>
+<p>To use the function we need to execute it:</p>
+<div class="highlight"><pre><span class="n">a_buffered_shp</span> <span class="o">=</span> <span class="nb">buffer</span><span class="p">(</span><span class="n">a_line_or_polygon</span> <span class="o">=</span> <span class="s">&#39;path/to/file/line.shp&#39;</span><span class="p">,</span>
+       <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+<p>After we run the function <code>a_buffered_shp</code> will hold the buffered output that was <code>return</code>ed from the function. </p>
+<p>In our homework we need to define a function and execute it for <em>almost</em> all questions. I will however set up the function, give it a name, and tell you what object needs to be returned back to me for grading. </p>
 <h1 id="general-approach">General Approach<a class="headerlink" href="#general-approach" title="Permanent link"></a></h1>
 <p>There will be a series of questions, some of which will be autograded and others that will be manually graded. </p>
 <p>A question will take the following form. I will provide a specific prompt. 
 <img alt="assignment" src="https://github.com/mmann1123/GEOG6308/blob/main/example_question.png?raw=true" /></p>
-<p>In the example above you need to write code to generate an object called <code>alist</code>. Then <code>alist</code> gets returns from the function to the autograder. </p>
+<p>In the example above you need to write code to generate an object called <code>alist</code>. Then <code>alist</code> gets returned from the function to the autograder. </p>
 <p>DO NOT DELETE <code>return alist</code>, or if you do, add it back.</p>
 <h2 id="correct-answers">Correct Answers<a class="headerlink" href="#correct-answers" title="Permanent link"></a></h2>
 <p>In this example we will write a bit of code that will correctly answers the question.  </p>
