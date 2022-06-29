@@ -1071,8 +1071,8 @@ body .markdown-body
 <p>2) Open the &ldquo;anaconda prompt&rdquo; (not the powershell version)</p>
 <div class="highlight"><pre>conda create -n spatial arcpy arcgis -c esri
 conda activate spatial
-conda install geopandas  -c conda-forge
-pip install notebook
+conda install geopandas jupyterlab  matplotlib mapclassify -c conda-forge
+pip install notebook geopy rtree
 pip install --upgrade nbconvert
 </pre></div>
 
