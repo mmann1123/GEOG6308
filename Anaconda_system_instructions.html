@@ -1079,9 +1079,9 @@ pip install --upgrade nbconvert
 <p>3) find the python path with and record it</p>
 <p><code>where python</code></p>
 <h1 id="sublime">Sublime<a class="headerlink" href="#sublime" title="Permanent link"></a></h1>
-<p>1) install sublime
-2) go to Preferences &gt; settings.
-3) in the right hand window, replace all text with:</p>
+<p>1) install sublime</p>
+<p>2) go to Preferences &gt; settings.</p>
+<p>3) in the right hand window, replace all text with:</p>
 <div class="highlight"><pre>{
     &quot;ignored_packages&quot;:
     [
@@ -1093,8 +1093,8 @@ pip install --upgrade nbconvert
 }
 </pre></div>
 
-<p>4) go to tools &gt; build system &gt; New Build System
-5) replace all text with the following, but replace the path with the one found above using <code>where python</code>:
+<p>4) go to tools &gt; build system &gt; New Build System</p>
+<p>5) replace all text with the following, but replace the path with the one found above using <code>where python</code>:
 * NOTE: replace all \ with / in the path to python *</p>
 <p><div class="highlight"><pre>{
     &quot;cmd&quot;: [&quot;c:/Users/mmann/Anaconda3/envs/spatial/python.exe&quot;, &quot;-u&quot;, &quot;$file&quot;],
@@ -1110,9 +1110,9 @@ pip install --upgrade nbconvert
 <span class="kn">import</span> <span class="nn">arcgis</span>
 <span class="k">print</span><span class="p">(</span><span class="s">&#39;hit&#39;</span><span class="p">)</span>
 </pre></div>
-3) Select spatial from Tools &gt; Build System
-4) Hit command B to build.
-5) It should print &lsquo;hi&rsquo;, &lsquo;[Finished in Xs]&rsquo; and throw no errors in the bottom window</p>
+3) Select spatial from Tools &gt; Build System</p>
+<p>4) Hit command B to build.</p>
+<p>5) It should print &lsquo;hi&rsquo;, &lsquo;[Finished in Xs]&rsquo; and throw no errors in the bottom window</p>
 <p>If that doesn&rsquo;t work use the following for the build configuration:
 <div class="highlight"><pre>{
     &quot;cmd&quot;: [&quot;c:/Progra~1/ArcGIS/Pro/bin/Python/scripts/propy.bat&quot;, &quot;-u&quot;, &quot;$file&quot;],
@@ -1121,5 +1121,9 @@ pip install --upgrade nbconvert
 }   
 </pre></div></p>
 <h1 id="vs-code">VS Code<a class="headerlink" href="#vs-code" title="Permanent link"></a></h1>
-<p>1) Please install <a href="https://code.visualstudio.com/Download">vscode</a> 
-2) Under extensions tab to the left install Python and Jupyter extensions</p></article></body></html>
+<p>1) Please install <a href="https://code.visualstudio.com/Download">vscode</a> </p>
+<p>2) Under extensions tab to the left install Python and Jupyter extensions</p>
+<h1 id="wingpy-101">Wingpy 101<a class="headerlink" href="#wingpy-101" title="Permanent link"></a></h1>
+<p>1) Download and install <a href="https://wingware.com/downloads/wing-101">wingpy</a></p>
+<p>2) Go to edit &gt; Configure Python &gt; switch &ldquo;Python Executable&rdquo; to &ldquo;command line&rdquo;, and browse for the path found above using <code>where python</code> from the first section. </p>
+<p>3) Go to edit &gt; preferences &gt; Editor &gt; Auto-Completion &gt; switch &ldquo;auto-show competer&rdquo;  to &ldquo;Always&rdquo;</p></article></body></html>
