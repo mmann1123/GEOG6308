@@ -1,4 +1,7 @@
 
+I would like the following available in the SAL and via citrix (or other)
+
+
 # Anaconda 64bit
 
 1) Install anaconda 64 bit https://www.anaconda.com/products/distribution#Downloads
@@ -8,9 +11,10 @@
 ``` 
 conda create -n spatial arcpy arcgis -c esri
 conda activate spatial
-conda install geopandas  -c conda-forge
-pip install notebook
+conda install geopandas jupyterlab  matplotlib mapclassify -c conda-forge
+pip install notebook geopy rtree
 pip install --upgrade nbconvert
+
 ```
 
 3) find the python path with and record it
@@ -19,7 +23,9 @@ pip install --upgrade nbconvert
 
 # Sublime
 1) install sublime
+
 2) go to Preferences > settings.
+
 3) in the right hand window, replace all text with:
 
 ```
@@ -35,6 +41,7 @@ pip install --upgrade nbconvert
 ```
 
 4) go to tools > build system > New Build System
+
 5) replace all text with the following, but replace the path with the one found above using `where python`:
 * NOTE: replace all \ with / in the path to python *
 
@@ -47,7 +54,7 @@ pip install --upgrade nbconvert
 }
 
 ```
-6) Save the file as spatial.sublime-build in the default directory. 
+6) Save the file as `spatial.sublime-build` in the default directory. 
 
 ## Validate
 1) Create a new file in sublime, save it as test.py
@@ -61,7 +68,9 @@ print('hit')
 
 ```
 3) Select spatial from Tools > Build System
+
 4) Hit command B to build.
+
 5) It should print 'hi', '[Finished in Xs]' and throw no errors in the bottom window
 
 If that doesn't work use the following for the build configuration:
@@ -73,21 +82,40 @@ If that doesn't work use the following for the build configuration:
     "selector": "source.python"
 }   
 
-```
-
-# Arcgis
-
-Likely requires install of node.js
-
 ``` 
-conda create -n arcgis arcgis -c esri -y
-conda activate arcgis
-conda install geopandas -c conda-forge -y
-pip install notebook
-pip install --upgrade nbconvert
-```
 
 # VS Code
 
 1) Please install [vscode](https://code.visualstudio.com/Download) 
+
 2) Under extensions tab to the left install Python and Jupyter extensions
+
+3) Check that it has access to the `spatial` 
+
+    - Open vscode, create a new file called `test.ipynb`.
+    - write the folloing code in one of the cells
+    ```
+    import arcpy
+
+    ```
+    - Press `shift`+`enter` to execute it, when prompted select the `spatial` kernel from the dropdown.
+    - There should be no error
+
+# Thonny
+
+Before you start
+
+- please ensure that VS 2013, VS 2015, VS 2017, VS 2019 or VS 2022 was installed with the Visual C++ option
+
+- Install rust https://rustup.rs/ package manager
+
+1) Download and install [Thonny](https://thonny.org/)
+
+2) Go to Tools > Interpreter tab > from the dropdown select "Alternative Python 3 interpreter or virtual environment", and browse for the path found above using `where python` from the first section. 
+
+3) Go to edit > preferences > Editor > Auto-Completion > switch "auto-show competer"  to "Always"
+
+4) Go to Tools > Manage plugins > search for Jupyter > click on jupyter link > click install button
+
+
+ 
