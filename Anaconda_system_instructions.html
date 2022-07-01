@@ -1123,7 +1123,27 @@ pip install --upgrade nbconvert
 <h1 id="vs-code">VS Code<a class="headerlink" href="#vs-code" title="Permanent link"></a></h1>
 <p>1) Please install <a href="https://code.visualstudio.com/Download">vscode</a> </p>
 <p>2) Under extensions tab to the left install Python and Jupyter extensions</p>
-<h1 id="wingpy-101">Wingpy 101<a class="headerlink" href="#wingpy-101" title="Permanent link"></a></h1>
-<p>1) Download and install <a href="https://wingware.com/downloads/wing-101">wingpy</a></p>
+<p>3) Check that it has access to the <code>spatial</code> </p>
+<pre><code>- Open vscode, create a new file called `test.ipynb`.
+- write the folloing code in one of the cells
+```
+import arcpy
+
+```
+- Press `shift`+`enter` to execute it, when prompted select the `spatial` kernel from the dropdown.
+- There should be no error
+</code></pre>
+<h1 id="thonny">Thonny<a class="headerlink" href="#thonny" title="Permanent link"></a></h1>
+<p>Before you start</p>
+<ul>
+<li>
+<p>please ensure that VS 2013, VS 2015, VS 2017, VS 2019 or VS 2022 was installed with the Visual C++ option</p>
+</li>
+<li>
+<p>Install rust <a href="https://rustup.rs/">https://rustup.rs/</a> package manager</p>
+</li>
+</ul>
+<p>1) Download and install <a href="https://thonny.org/">Thonny</a></p>
 <p>2) Go to edit &gt; Configure Python &gt; switch &ldquo;Python Executable&rdquo; to &ldquo;command line&rdquo;, and browse for the path found above using <code>where python</code> from the first section. </p>
-<p>3) Go to edit &gt; preferences &gt; Editor &gt; Auto-Completion &gt; switch &ldquo;auto-show competer&rdquo;  to &ldquo;Always&rdquo;</p></article></body></html>
+<p>3) Go to edit &gt; preferences &gt; Editor &gt; Auto-Completion &gt; switch &ldquo;auto-show competer&rdquo;  to &ldquo;Always&rdquo;</p>
+<p>4) Go to Tools &gt; Manage plugins &gt; search for Jupyter &gt; click on jupyter link &gt; click install button</p></article></body></html>
