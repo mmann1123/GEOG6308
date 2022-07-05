@@ -93,6 +93,7 @@ If that doesn't work use the following for the build configuration:
 3) Check that it has access to the `spatial` 
 
     - Open vscode, create a new file called `test.ipynb`.
+    - When prompted select `spatial` as the "interpreter" or environment
     - write the folloing code in one of the cells
     ```
     import arcpy
