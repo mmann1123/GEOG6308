@@ -21,6 +21,12 @@ pip install --upgrade nbconvert
 
 `where python`
 
+4) Students will need permission to write to the primary anaconda folder in order to install more modules - it should be `C:Program Files/Anaconda`. You can test whether permissions are working as expected by typing the following into the "anaconda prompt"
+
+`conda install pandas -y`
+
+This should install without an error. 
+
 # Sublime
 1) install sublime
 
