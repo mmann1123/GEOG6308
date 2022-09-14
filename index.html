@@ -1066,85 +1066,90 @@ body .markdown-body
 .highlight .vi{color:teal}
 .highlight .il{color:#009999}
 .highlight .gc{color:#999;background-color:#EAF2F5}
-</style><title>How to do your python homework</title></head><body><article class="markdown-body"><!-- all images are stored in github/GEOG6308 -->
-
-<h1 id="how-to-do-your-ipynb-homework">How to do your ipynb homework<a class="headerlink" href="#how-to-do-your-ipynb-homework" title="Permanent link"></a></h1>
-<p>We are going to use <code>.ipynb</code> files to do some of your homework, this will allow me to give you prompt feedback on your progress.  The only trick however is that <code>.ipynb</code> aren&rsquo;t readable as a text file like <code>.py</code> files.  So we will need to use an IDE to open it, there are a number of them available, but I generally suggest using VScode or if you want something less intimidating Thonny.</p>
-<p>We have a number of options for doing your homework, online via citrix, in person in the SAL lab, or on your laptop. </p>
-<p><strong>Recommended</strong></p>
-<p>A) VScode (or Thonny) via citrix 
-    - Go to <a href="https://apps.ccas.gwu.edu/">https://apps.ccas.gwu.edu</a>
-    - Click on VScode</p>
-<p>B) VScode (or Thonny) in the SAL 
-    - See <a href="https://calendar.google.com/calendar/u/0/embed?src=email.gwu.edu_c8a8miomq15880o3n5ptm94knc@group.calendar.google.com&amp;ctz=America/New_York">SAL schedule here</a></p>
-<p>C) VScode on your laptop <a href="https://mmann1123.github.io/GEOG6308/vscode_notebook_start.html">how to install vscode</a></p>
-<p><strong>Also Possible</strong></p>
-<p>A) <a href="https://mmann1123.github.io/GEOG6308/jupyter_notebook_start.html"><em>Jupyter Notebook on your laptop</em></a></p>
-<p>B) <a href="https://mmann1123.github.io/GEOG6308/vscode_notebook_start.html"><em>VScode on your laptop</em></a></p>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link"></a></h2>
-<p>1) Change the name of the <code>.ipynb</code> file following the directions at the top of the file. This can be done inside the assignment by clicking on the name in the upper left corner. Typically the name will follow this convension: (geo1_emailusername_assignment).</p>
-<p>IT IS IMPORTANT YOU CHANGE THE NAME OF YOUR HOMEWORK BEFORE SUBMISSION. PLEASE DO THIS. </p>
-<p><img alt="rename" src="https://github.com/mmann1123/GEOG6308/blob/main/rename.png?raw=true" /></p>
-<p>2) Enter your name and any students you collaborated with in the top cell</p>
-<p><img alt="name" src="https://github.com/mmann1123/GEOG6308/blob/main/fill_name.png?raw=tru" /></p>
-<p>3) Fill your answers in the section starting with <code># YOUR CODE HERE</code></p>
-<p>This will require you to <em>remove</em> or <code>#comment out</code> the following code snippet:</p>
-<div class="highlight"><pre>raise NotImplementedError()
+</style><title>Anaconda_system_instructions</title></head><body><article class="markdown-body"><p>I would like the following available in the SAL and via citrix (or other)</p>
+<h1 id="anaconda-64bit">Anaconda 64bit<a class="headerlink" href="#anaconda-64bit" title="Permanent link"></a></h1>
+<p>1) Install anaconda 64 bit <a href="https://www.anaconda.com/products/distribution#Downloads">https://www.anaconda.com/products/distribution#Downloads</a></p>
+<p>2) Open the &ldquo;anaconda prompt&rdquo; (not the powershell version)</p>
+<div class="highlight"><pre>conda create -n spatial arcpy arcgis -c esri
+conda activate spatial
+conda install geopandas jupyterlab  matplotlib mapclassify -c conda-forge
+pip install notebook geopy rtree
+pip install --upgrade nbconvert
 </pre></div>
 
-<p>If you leave <code>raise NotImplementedError()</code> you might loose points. </p>
-<h1 id="whats-a-function">What&rsquo;s a Function?<a class="headerlink" href="#whats-a-function" title="Permanent link"></a></h1>
-<p>Many of these assignments require the use of a <code>function</code>. Functions are just a way of assigning a name to a useful peice of code we want to use again and again. For instance <code>buffer</code> is a function we use all the time in arcmap.  </p>
-<p>In python we could sketch out the buffer function as follows:</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">buffer</span><span class="p">(</span><span class="n">a_line_or_polygon</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
+<p>3) find the python path with and record it</p>
+<p><code>where python</code></p>
+<p>4) Students will need permission to write to the primary anaconda folder in order to install more modules - it should be <code>C:Program Files/Anaconda</code>. You can test whether permissions are working as expected by typing the following into the &ldquo;anaconda prompt&rdquo;</p>
+<p><code>conda install pandas -y</code></p>
+<p>This should install without an error.  </p>
+<p>5) Copy the folder <code>C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3</code> to the anaconda env folder based on the response from <code>where python</code>, should be something like <code>C:\Users\mmann\Anaconda3\envs\</code>.</p>
+<h1 id="sublime">Sublime<a class="headerlink" href="#sublime" title="Permanent link"></a></h1>
+<p>1) install sublime</p>
+<p>2) go to Preferences &gt; settings.</p>
+<p>3) in the right hand window, replace all text with:</p>
+<div class="highlight"><pre>{
+    &quot;ignored_packages&quot;:
+    [
+        &quot;Vintage&quot;,
+    ],
 
-    <span class="n">buffered_object</span> <span class="o">=</span>  <span class="n">a_line_or_polygon</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">buffered_object</span>
+    &quot;tab_size&quot;: 4,
+    &quot;translate_tabs_to_spaces&quot;: true
+}
 </pre></div>
 
-<p>In this case we defined a function that takes an input of a shapefile stored in <code>a_line_or_polygon</code>, then we increase the boundary by <code>distance</code> and store the new polygon in <code>buffered_object</code>.</p>
-<p>This just DEFINES the function so that we can use it later. It doesn&rsquo;t EXECUTE it.</p>
-<p>To use the function we need to execute it:</p>
-<div class="highlight"><pre><span class="n">a_buffered_shp</span> <span class="o">=</span> <span class="nb">buffer</span><span class="p">(</span><span class="n">a_line_or_polygon</span> <span class="o">=</span> <span class="s">&#39;path/to/file/line.shp&#39;</span><span class="p">,</span>
-       <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+<p>4) go to tools &gt; build system &gt; New Build System</p>
+<p>5) replace all text with the following, but replace the path with the one found above using <code>where python</code>:
+* NOTE: replace all \ with / in the path to python *</p>
+<p><div class="highlight"><pre>{
+    &quot;cmd&quot;: [&quot;c:/Users/mmann/Anaconda3/envs/spatial/python.exe&quot;, &quot;-u&quot;, &quot;$file&quot;],
+    &quot;file_regex&quot;: &quot;^[ ]*File \&quot;(...*?)\&quot;, line ([0-9]*)&quot;,
+    &quot;selector&quot;: &quot;source.python&quot;
+}
 </pre></div>
+6) Save the file as <code>spatial.sublime-build</code> in the default directory. </p>
+<h2 id="validate">Validate<a class="headerlink" href="#validate" title="Permanent link"></a></h2>
+<p>1) Create a new file in sublime, save it as test.py
+2) Add the following lines:</p>
+<p><div class="highlight"><pre><span class="kn">import</span> <span class="nn">arcpy</span>
+<span class="kn">import</span> <span class="nn">arcgis</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;hit&#39;</span><span class="p">)</span>
+</pre></div>
+3) Select spatial from Tools &gt; Build System</p>
+<p>4) Hit command B to build.</p>
+<p>5) It should print &lsquo;hi&rsquo;, &lsquo;[Finished in Xs]&rsquo; and throw no errors in the bottom window</p>
+<p>If that doesn&rsquo;t work use the following for the build configuration:
+<div class="highlight"><pre>{
+    &quot;cmd&quot;: [&quot;c:/Progra~1/ArcGIS/Pro/bin/Python/scripts/propy.bat&quot;, &quot;-u&quot;, &quot;$file&quot;],
+    &quot;file_regex&quot;: &quot;^[ ]*File \&quot;(...*?)\&quot;, line ([0-9]*)&quot;,
+    &quot;selector&quot;: &quot;source.python&quot;
+}   
+</pre></div></p>
+<h1 id="vs-code">VS Code<a class="headerlink" href="#vs-code" title="Permanent link"></a></h1>
+<p>1) Please install <a href="https://code.visualstudio.com/Download">vscode</a> </p>
+<p>2) Under extensions tab to the left install Python and Jupyter extensions</p>
+<p>3) Check that it has access to the <code>spatial</code> </p>
+<pre><code>- Open vscode, create a new file called `test.ipynb`.
+- When prompted select `spatial` as the "interpreter" or environment
+- write the folloing code in one of the cells
+```
+import arcpy
 
-<p>After we run the function <code>a_buffered_shp</code> will hold the buffered output that was <code>return</code>ed from the function. </p>
-<p>In our homework we need to define a function and execute it for <em>almost</em> all questions. I will however set up the function, give it a name, and tell you what object needs to be returned back to me for grading. </p>
-<h1 id="general-approach">General Approach<a class="headerlink" href="#general-approach" title="Permanent link"></a></h1>
-<p>There will be a series of questions, some of which will be autograded and others that will be manually graded. </p>
-<h2 id="questions-without-using-functions">Questions without using functions<a class="headerlink" href="#questions-without-using-functions" title="Permanent link"></a></h2>
-<p>Early on in the semester we won&rsquo;t be using formulas in the questions. Instead I will ask you to create a variable of a certain type with specific values stored inside. In this example I will prompt you to store the square of 1,2,3,4 using a <code>for</code> loop, and request the output is stored as a <code>list</code></p>
-<p><img alt="no function example" src="https://github.com/mmann1123/GEOG6308/raw/main/no_function.png?raw=true" /></p>
-<p>Your answer to the question might look something like this:</p>
-<p><img alt="no function answer" src="https://github.com/mmann1123/GEOG6308/raw/main/no_function_answer.png?raw=true" /></p>
-<p>You can also confirm the datatype of the variable you created using the function <code>type()</code>. Here I confirm that its stored as a <code>list</code>:</p>
-<p><img alt="confirm its a list" src="https://github.com/mmann1123/GEOG6308/raw/main/a_list.png?raw=true" /></p>
-<p>I will then use an autograder to evaluate the contents and type of <code>alist</code>. See the sections below for more about the autograder tests. </p>
-<p>Later on in the semester we will use functions to store your answers. PLEASE READ THIS SECTION, the &lsquo;correct answer&rsquo; and &lsquo;incorrect&rsquo; answers will be relevant to all your work. </p>
-<h2 id="questions-with-functions">Questions with functions<a class="headerlink" href="#questions-with-functions" title="Permanent link"></a></h2>
-<p>A question will take the following form. I will provide a specific prompt. </p>
-<p><img alt="assignment" src="https://github.com/mmann1123/GEOG6308/blob/main/example_question.png?raw=true" /></p>
-<p>In the example above you need to write code to generate an object called <code>alist</code> in your function and return it. I will use your function to generate <code>alist</code> and return it to the autograder. </p>
-<p>If I set up, or ask for a function DO NOT DELETE <code>return alist</code>, or if you do, add it back.</p>
-<h2 id="correct-answers">Correct Answers<a class="headerlink" href="#correct-answers" title="Permanent link"></a></h2>
-<p>In this example we will write a bit of code that will correctly answers the question.  </p>
-<p><img alt="correct" src="https://github.com/mmann1123/GEOG6308/blob/main/example_correct.png?raw=true" /></p>
-<p>Note that running the function <code>squares(10)</code> provides to desired outcome. </p>
-<p>This answer is validated by the autograder with a series of <code>assert</code> tests.  If your answer is 100% correct, you should not throw any error when the assertion tests are run. </p>
-<p>The following assertion tests were completed without throwing any errors. This is what we want!</p>
-<p><img alt="assert1" src="https://github.com/mmann1123/GEOG6308/blob/main/question_assert1.png?raw=true" /></p>
-<h2 id="incorrect-answers">Incorrect Answers<a class="headerlink" href="#incorrect-answers" title="Permanent link"></a></h2>
-<p>For this question there is another cell with assertion tests that will fail in this case. Here the tests are trying to see if you are handling invalid inputs from the user. For instance setting n=0 or n=-1 should throw an errror. </p>
-<p><img alt="assert2" src="https://github.com/mmann1123/GEOG6308/blob/main/question_assert2.png?raw=true" /></p>
-<p>Here the assertion tests are pointing out that we allowed invalid inputs! We should go back to our code and fix it until we are no longer getting errors from this cell of tests. </p>
-<h1 id="autograder-tips">Autograder Tips<a class="headerlink" href="#autograder-tips" title="Permanent link"></a></h1>
-<p>The objective is to: 
-- Run Cell &gt; Run All, without any errors</p>
-<p>How do we do it:
-- Create or <code>return</code> the object requested in the prompt
-- make sure your object is exactly as requested</p>
-<p>Tricks:
-- You can always add more cells to experiment in, just make sure you put your final answer in the correct place, and <em>delete</em> any cells that you don&rsquo;t need in the end. 
-- You can always print an object to the screen <code>print(an_object_name)</code>, or look at its type <code>type(an_object_name)</code></p></article></body></html>
+```
+- Press `shift`+`enter` to execute it, when prompted select the `spatial` kernel from the dropdown.
+- There should be no error
+</code></pre>
+<h1 id="thonny">Thonny<a class="headerlink" href="#thonny" title="Permanent link"></a></h1>
+<p>Before you start</p>
+<ul>
+<li>
+<p>please ensure that VS 2013, VS 2015, VS 2017, VS 2019 or VS 2022 was installed with the Visual C++ option</p>
+</li>
+<li>
+<p>Install rust <a href="https://rustup.rs/">https://rustup.rs/</a> package manager</p>
+</li>
+</ul>
+<p>1) Download and install <a href="https://thonny.org/">Thonny</a></p>
+<p>2) Go to Tools &gt; Interpreter tab &gt; from the dropdown select &ldquo;Alternative Python 3 interpreter or virtual environment&rdquo;, and browse for the path found above using <code>where python</code> from the first section. </p>
+<p>3) Go to edit &gt; preferences &gt; Editor &gt; Auto-Completion &gt; switch &ldquo;auto-show competer&rdquo;  to &ldquo;Always&rdquo;</p>
+<p>4) Go to Tools &gt; Manage plugins &gt; search for Jupyter &gt; click on jupyter link &gt; click install button</p></article></body></html>
