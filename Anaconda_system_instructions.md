@@ -25,7 +25,12 @@ pip install --upgrade nbconvert
 
 `conda install pandas -y`
 
-This should install without an error. 
+This should install without an error.  
+
+5) Copy the entire folder `C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3` to the anaconda env folder based on the response from `where python`, should be something like `C:\Users\mmann\Anaconda3\envs\` to create a new folder with the path `C:\Users\mmann\Anaconda3\envs\arcgispro-py3`.
+
+
+
 
 # Sublime
 1) install sublime
