@@ -1083,6 +1083,27 @@ pip install --upgrade nbconvert
 <p><code>conda install pandas -y</code></p>
 <p>This should install without an error.  </p>
 <p>5) Copy the entire folder <code>C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3</code> to the anaconda env folder based on the response from <code>where python</code>, should be something like <code>C:\Users\mmann\Anaconda3\envs\</code> to create a new folder with the path <code>C:\Users\mmann\Anaconda3\envs\arcgispro-py3</code>.</p>
+<p>6) Insert an entry into <code>C:\Users\mmann\AppData\Roaming\Code\User\settings.json</code> with the path to the user&rsquo;s python executable in the new <code>arcgispro-py3</code> folder:</p>
+<div class="highlight"><pre>    &quot;python.defaultInterpreterPath&quot;: &quot;c:\\Users\\mmann\\Anaconda3\\envs\\arcgispro-py3\\python.exe&quot;,
+</pre></div>
+
+<p>Make sure not to delete other entries in <code>settings.json</code>. It might looks something like:</p>
+<div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;workbench.colorTheme&quot;</span><span class="p">:</span> <span class="s2">&quot;Default Dark+&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;security.workspace.trust.untrustedFiles&quot;</span><span class="p">:</span> <span class="s2">&quot;open&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;jupyter.interactiveWindowMode&quot;</span><span class="p">:</span> <span class="s2">&quot;perFile&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;python.formatting.provider&quot;</span><span class="p">:</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;editor.formatOnType&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;terminal.integrated.shell.windows&quot;</span><span class="p">:</span> <span class="s2">&quot;C:\\WINDOWS\\System32\\cmd.exe&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;[python]&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;editor.defaultFormatter&quot;</span><span class="p">:</span> <span class="s2">&quot;ms-python.python&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;editor.formatOnSave&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;jupyter.askForKernelRestart&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;python.defaultInterpreterPath&quot;</span><span class="p">:</span> <span class="s2">&quot;c:\\Users\\mmann\\Anaconda3\\envs\\arcgispro-py3\\python.exe&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
 <h1 id="sublime">Sublime<a class="headerlink" href="#sublime" title="Permanent link"></a></h1>
 <p>1) install sublime</p>
 <p>2) go to Preferences &gt; settings.</p>
@@ -1128,28 +1149,33 @@ pip install --upgrade nbconvert
 <h1 id="vs-code">VS Code<a class="headerlink" href="#vs-code" title="Permanent link"></a></h1>
 <p>1) Please install <a href="https://code.visualstudio.com/Download">vscode</a> </p>
 <p>2) Under extensions tab to the left install Python and Jupyter extensions</p>
-<p>3) Check that it has access to the <code>spatial</code> </p>
+<p>3) Check that it has access to the <code>arcgispro-py3</code> </p>
 <pre><code>- Open vscode, create a new file called `test.ipynb`.
-- When prompted select `spatial` as the "interpreter" or environment
+- If prompted select `arcgispro-py3` as the "interpreter" or environment
 - write the folloing code in one of the cells
+
 ```
 import arcpy
 
 ```
-- Press `shift`+`enter` to execute it, when prompted select the `spatial` kernel from the dropdown.
+- Press `shift`+`enter` to execute it, when prompted select the `arcgispro-py3` kernel from the dropdown.
 - There should be no error
 </code></pre>
-<h1 id="thonny">Thonny<a class="headerlink" href="#thonny" title="Permanent link"></a></h1>
-<p>Before you start</p>
-<ul>
-<li>
-<p>please ensure that VS 2013, VS 2015, VS 2017, VS 2019 or VS 2022 was installed with the Visual C++ option</p>
-</li>
-<li>
-<p>Install rust <a href="https://rustup.rs/">https://rustup.rs/</a> package manager</p>
-</li>
-</ul>
-<p>1) Download and install <a href="https://thonny.org/">Thonny</a></p>
-<p>2) Go to Tools &gt; Interpreter tab &gt; from the dropdown select &ldquo;Alternative Python 3 interpreter or virtual environment&rdquo;, and browse for the path found above using <code>where python</code> from the first section. </p>
-<p>3) Go to edit &gt; preferences &gt; Editor &gt; Auto-Completion &gt; switch &ldquo;auto-show competer&rdquo;  to &ldquo;Always&rdquo;</p>
-<p>4) Go to Tools &gt; Manage plugins &gt; search for Jupyter &gt; click on jupyter link &gt; click install button</p></article></body></html>
+<!-- # Thonny
+
+Before you start
+
+- please ensure that VS 2013, VS 2015, VS 2017, VS 2019 or VS 2022 was installed with the Visual C++ option
+
+- Install rust https://rustup.rs/ package manager
+
+1) Download and install [Thonny](https://thonny.org/)
+
+2) Go to Tools > Interpreter tab > from the dropdown select "Alternative Python 3 interpreter or virtual environment", and browse for the path found above using `where python` from the first section. 
+
+3) Go to edit > preferences > Editor > Auto-Completion > switch "auto-show competer"  to "Always"
+
+4) Go to Tools > Manage plugins > search for Jupyter > click on jupyter link > click install button
+
+
+  --></article></body></html>

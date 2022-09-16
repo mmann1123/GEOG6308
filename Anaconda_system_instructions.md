@@ -29,7 +29,30 @@ This should install without an error.
 
 5) Copy the entire folder `C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3` to the anaconda env folder based on the response from `where python`, should be something like `C:\Users\mmann\Anaconda3\envs\` to create a new folder with the path `C:\Users\mmann\Anaconda3\envs\arcgispro-py3`.
 
+6) Insert an entry into `C:\Users\mmann\AppData\Roaming\Code\User\settings.json` with the path to the user's python executable in the new `arcgispro-py3` folder:
 
+```
+    "python.defaultInterpreterPath": "c:\\Users\\mmann\\Anaconda3\\envs\\arcgispro-py3\\python.exe",
+```
+
+Make sure not to delete other entries in `settings.json`. It might looks something like:
+
+``` json
+{
+    "workbench.colorTheme": "Default Dark+",
+    "security.workspace.trust.untrustedFiles": "open",
+    "jupyter.interactiveWindowMode": "perFile",
+    "python.formatting.provider": "black",
+    "editor.formatOnType": true,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "editor.formatOnSave": true,
+    "jupyter.askForKernelRestart": false,
+    "python.defaultInterpreterPath": "c:\\Users\\mmann\\Anaconda3\\envs\\arcgispro-py3\\python.exe",
+}
+```
 
 
 # Sublime
@@ -101,19 +124,20 @@ If that doesn't work use the following for the build configuration:
 
 2) Under extensions tab to the left install Python and Jupyter extensions
 
-3) Check that it has access to the `spatial` 
+3) Check that it has access to the `arcgispro-py3` 
 
     - Open vscode, create a new file called `test.ipynb`.
-    - When prompted select `spatial` as the "interpreter" or environment
+    - If prompted select `arcgispro-py3` as the "interpreter" or environment
     - write the folloing code in one of the cells
+    
     ```
     import arcpy
 
     ```
-    - Press `shift`+`enter` to execute it, when prompted select the `spatial` kernel from the dropdown.
+    - Press `shift`+`enter` to execute it, when prompted select the `arcgispro-py3` kernel from the dropdown.
     - There should be no error
 
-# Thonny
+<!-- # Thonny
 
 Before you start
 
@@ -130,4 +154,4 @@ Before you start
 4) Go to Tools > Manage plugins > search for Jupyter > click on jupyter link > click install button
 
 
- 
+  -->
