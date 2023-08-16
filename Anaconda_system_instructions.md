@@ -9,7 +9,7 @@ I would like the following available in the SAL and via citrix (or other)
 2) Open the "anaconda prompt" (not the powershell version)
 
 ``` 
-conda create -n spatial arcpy arcgis -c esri
+conda create -n spatial arcpy=3.1 arcgis -c esri
 conda activate spatial
 conda install geopandas jupyterlab  matplotlib mapclassify -c conda-forge
 pip install notebook geopy rtree
