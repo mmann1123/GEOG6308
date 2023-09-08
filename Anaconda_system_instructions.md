@@ -14,6 +14,7 @@ conda activate spatial
 conda install geopandas jupyterlab  matplotlib mapclassify -c conda-forge
 pip install notebook geopy rtree
 pip install --upgrade nbconvert
+pip install --upgrade Pillow
 
 ```
 
