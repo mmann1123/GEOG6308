@@ -9,13 +9,15 @@ I would like the following available in the SAL and via citrix (or other)
 2) Open the "anaconda prompt" on windows (not the powershell version) or "terminal" on mac
 
 ``` 
-conda create -n spatial arcpy arcgis -c esri
+conda create -n spatial arcpy33 arcgis -c esri
 conda activate spatial
 conda install geopandas jupyterlab  matplotlib mapclassify -c conda-forge
 pip install notebook geopy rtree
 pip install --upgrade nbconvert
 
 ```
+
+Note: the version of arcpy you install will change over time, `arcpy33` refers to ArcGIS Pro version 3.3.  Please double check your version of ArcGIS to match with with the arcpy version. 
 
 # VS Code
 
